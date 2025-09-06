@@ -1,0 +1,19 @@
+<!-- <h1>{{ question }}</h1>
+
+<ul>
+    {%for choice in question.choice_set.all%}
+    <li>{{choice.choice_text.all}}</li>
+    {%endfor%}
+</ul> -->
+
+<form>
+    <fieldset>
+        <legend> <h1>{{question.question_text}}</h1></legend>
+        {% if erro_message %}<p><strong>{{error_message}}</strong></p>{%endif%}
+        {%for choice in question.choice_set.all %}
+        <input type = "radio" name="choice" id = "choice{{forloop.counter}}" value="{{choice.id}}">
+        <label>{{ choice.choice_text }}</label><br>
+        {%endfor%}
+    </fieldset>
+    <input type="submit" value="vote">
+</form>
