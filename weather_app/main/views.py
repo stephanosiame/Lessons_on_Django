@@ -7,7 +7,7 @@ API_KEY = "2f83faca48c8e86172fa158a5057fecd"
 url = f"http://api.openweathermap.org/data/2.5/weather?q=London&appid={API_KEY}"
 
 def index(request):
-    weather_data = None  # Default: no data yet
+    weather_data = ""  # Default: no data yet
     city_name = ""
 
     if request.method == "POST":
